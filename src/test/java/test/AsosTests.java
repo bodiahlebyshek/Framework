@@ -30,10 +30,10 @@ public class AsosTests extends CommonConditions {
     public void SeacrhItemTest(){
         String resultItemTitle = new MainPage(driver)
                 .openPage()
-                .typeSearchRequest("BOSS Magn large logo cross body bag in black")
+                .typeSearchRequest("Бежевые парусиновые ботинки на шнуровке и массивной черное подошве ASOS DESIGN")
                 .getItemTitle();
 
-        assertThat(resultItemTitle, is(equalTo("BOSS Magn large logo cross body bag in black")));
+        assertThat(resultItemTitle, is(equalTo("Бежевые парусиновые ботинки на шнуровке и массивной черное подошве ASOS DESIGN")));
     }
 
 
@@ -48,7 +48,7 @@ public class AsosTests extends CommonConditions {
                 .login(testUser);
 
         String ResultEmailFieldError =  new LoginPage(driver).getEmailFieldError();
-        assertThat(ResultEmailFieldError, is(equalTo("Looks like either your email address or password were incorrect. Wanna try again?")));
+        assertThat(ResultEmailFieldError, is(equalTo("Похоже, вы неверно ввели свой адрес электронной почты или пароль. Хотите попробовать еще раз?")));
     }
 
 
@@ -64,6 +64,7 @@ public class AsosTests extends CommonConditions {
 
         assertThat(ResultPasswordFieldError, is(equalTo("Hey, we need a password here")));
     }
+
     @Test(priority = 5)
     public void incorrentDataLoginTest(){
         UserCreator userCreator = new UserCreator();
@@ -83,7 +84,7 @@ public class AsosTests extends CommonConditions {
                 .searchItem("aaaaasdadadadsada")
                 .getEmptyMessageText();
 
-        assertThat(ResultEmptyMessageText, is(equalTo("But don't give up – check the spelling or try less specific search terms.")));
+        assertThat(ResultEmptyMessageText, is(equalTo("Но не стоит сдаваться! Проверь написание или используй менее специфичные термины для поиска.")));
 
     }
     @Test(priority = 7)

@@ -13,7 +13,7 @@ public class CatalogPage extends AbstractPage
 {
     private final Logger logger = LogManager.getRootLogger();
 
-    @FindBy(xpath = "//*[@id=\"chrome-app-container\"]/section[1]/section/section/section/section/section/h2")
+    @FindBy(xpath = "//*[@id=\"chrome-app-container\"]/section[1]/section/section/section/section/section/p")
     WebElement emptyMessageText;
 
     public CatalogPage(WebDriver driver)

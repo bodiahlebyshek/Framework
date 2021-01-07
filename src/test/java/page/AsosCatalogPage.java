@@ -25,7 +25,7 @@ public class AsosCatalogPage extends AbstractPage  {
     WebElement sortByNewLocator;
     @FindBy(xpath="//*[@id=\"plp_web_sort_whats_new\"]")
     WebElement newItem;
-    @FindBy(xpath="//*[@id=\"product-21477142\"]/a/div[1]/img")
+    @FindBy(xpath="//*[@id=\"product-22135475\"]/a/div[1]/img")
     WebElement sortByNewSelected;
 
     private String url;
