@@ -15,24 +15,25 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 public class TestListener implements ITestListener {
     private Logger log = LogManager.getRootLogger();
 
     public void onTestStart(ITestResult iTestResult) {
-
+        System.out.println(iTestResult.getName()+" test case started");
     }
 
     public void onTestSuccess(ITestResult iTestResult) {
-
+        System.out.println("The name of the testcase passed is :"+iTestResult.getName());
     }
 
     public void onTestFailure(ITestResult iTestResult) {
         saveScreenshot();
+        System.out.println("The name of the testcase failed is :"+iTestResult.getName());
+
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
-
+        System.out.println("The name of the testcase Skipped is :"+iTestResult.getName());
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
@@ -40,11 +41,11 @@ public class TestListener implements ITestListener {
     }
 
     public void onStart(ITestContext iTestContext) {
-
+        System.out.println("Testing start");
     }
 
     public void onFinish(ITestContext iTestContext) {
-
+        System.out.println("Testing finish:");
     }
 
     private void saveScreenshot(){
