@@ -1,5 +1,4 @@
 package util;
-
 import driver.DriverSingleton;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -17,34 +16,34 @@ import java.time.format.DateTimeFormatter;
 
 public class TestListener implements ITestListener {
     private Logger log = LogManager.getRootLogger();
-
-    public void onTestStart(ITestResult iTestResult) {
-        System.out.println(iTestResult.getName()+" test case started");
+    @Override
+    public void onTestStart(ITestResult Result) {
+        System.out.println(Result.getName()+" test case started");
     }
-
-    public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("The name of the testcase passed is :"+iTestResult.getName());
+    @Override
+    public void onTestSuccess(ITestResult Result) {
+        System.out.println("The name of the testcase passed is :"+Result.getName());
     }
-
-    public void onTestFailure(ITestResult iTestResult) {
+    @Override
+    public void onTestFailure(ITestResult Result) {
         saveScreenshot();
-        System.out.println("The name of the testcase failed is :"+iTestResult.getName());
+        System.out.println("The name of the testcase failed is :"+Result.getName());
 
     }
-
-    public void onTestSkipped(ITestResult iTestResult) {
-        System.out.println("The name of the testcase Skipped is :"+iTestResult.getName());
+    @Override
+    public void onTestSkipped(ITestResult Result) {
+        System.out.println("The name of the testcase Skipped is :"+Result.getName());
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
 
     }
-
-    public void onStart(ITestContext iTestContext) {
+    @Override
+    public void onStart(ITestContext Result) {
         System.out.println("Testing start");
     }
-
-    public void onFinish(ITestContext iTestContext) {
+    @Override
+    public void onFinish(ITestContext Result) {
         System.out.println("Testing finish:");
     }
 

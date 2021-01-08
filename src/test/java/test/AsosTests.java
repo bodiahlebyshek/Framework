@@ -1,13 +1,12 @@
 package test;
 
-import model.User;
 import org.testng.Assert;
+import model.User;
 import org.testng.annotations.Test;
 import page.AsosCatalogPage;
 import page.LoginPage;
 import page.MainPage;
 import service.UserCreator;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 public class AsosTests extends CommonConditions {
